@@ -19,5 +19,50 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/img/home.png",
+      "sizes": "1372x2174",
+      "type": "image/png",
+      "label": "home Page",
+      "form_factor": "wide"
+    },
+        {
+      "src": "assets/img/product.png",
+      "sizes": "1372x2174",
+      "type": "image/png",
+      "label": "Product Page",
+      "form_factor": "wide"
+    },
+        {
+      "src": "assets/img/form.png",
+      "sizes": "1372x2174",
+      "type": "image/png",
+      "label": "form Page",
+      "form_factor": "wide"
+    },
+        {
+      "src": "assets/img/home.png",
+      "sizes": "1372x2174",
+      "type": "image/png",
+      "label": "home Page",
+      "form_factor": "narrow"
+    },
+            {
+      "src": "assets/img/product.png",
+      "sizes": "1372x2174",
+      "type": "image/png",
+      "label": "Product Page",
+      "form_factor": "narrow"
+    },
+            {
+      "src": "assets/img/form.png",
+      "sizes": "1372x2174",
+      "type": "image/png",
+      "label": "form Page",
+      "form_factor": "narrow"
+    },
   ]
+
 }
