@@ -62,7 +62,7 @@
       "type": "image/png",
       "label": "form Page",
       "form_factor": "narrow"
-    },
-  ],
+    }
+  ]
 
 }
