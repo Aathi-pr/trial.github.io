@@ -15,42 +15,31 @@ const PWA_URLS = [
   '/manifest.json'
 ];
 
+// Install event
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches
-      .open(PWA_CACHE)
-      .then((cache) => {
-        console.log("Caching resources...");
-        return cache.addAll(PWA_URLS);
-      })
-      .catch((error) => {
-        console.error("Failed to cache resources:", error);
-      }),
+    caches.open(PWA_CACHE).then((cache) => cache.addAll(PWA_URLS))
   );
 });
 
+// Fetch event
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches
-      .match(event.request)
-      .then((response) => {
-        return response || fetch(event.request);
-      })
-      .catch((error) => {
-        console.error("Fetch failed:", error);
-      }),
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
   );
 });
 
-// Activate event - cleanup old caches
-self.addEventListener('activate', event => {
+// Activate event
+self.addEventListener('activate', (event) => {
   const cacheWhitelist = [PWA_CACHE];
 
   event.waitUntil(
-    caches.keys().then(cacheNames => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
+        cacheNames.map((cacheName) => {
+          if (!cacheWhitelist.includes(cacheName)) {
             return caches.delete(cacheName);
           }
         })
