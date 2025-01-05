@@ -44,7 +44,7 @@ self.addEventListener("fetch", (event) => {
 
 // Activate event - cleanup old caches
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [CACHE_NAME];
+  const cacheWhitelist = [PWA_CACHE];
 
   event.waitUntil(
     caches.keys().then(cacheNames => {
