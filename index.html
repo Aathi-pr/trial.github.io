@@ -1,150 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Fruitso</title>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover Fruitso's signature blend of natural ingredients, creating a refreshing experience that elevates every moment. Each sip is crafted to deliver pure satisfaction and unmatched taste.">
+    <meta name="theme-color" content="#ffffff">
+    <title>Fruitso - Cut Fruit</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="css/style.min.css" as="style">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="manifest" href="manifest.json">
+    <script type="text/javascript">
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('sw.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful:', registration.scope);
+      })
+      .catch(err => {
+        console.log('ServiceWorker registration failed:', err);
+      });
+  });
+}
+    </script>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-modified.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-modified.png">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-	<!-- Navigation -->
-	<nav class="nav-container">
-		<div class="nav-content">
-			<a href="#" class="logo">Fruitso</a>
-			<button class="hamburger">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-			<div class="nav-links">
-				<a href="#home">Home</a>
-				<a href="#products">Products</a>
-				<a href="#contact">Contact</a>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+        <div class="nav-content">
+            <a href="/" class="logo" aria-label="Fruitso home">Fruitso</a>
+            <button type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="hamburger">
+                <span class="sr-only">Menu</span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+            <div class="nav-links" role="menu">
+                <a href="#home" role="menuitem">Home</a>
+                <a href="#products" role="menuitem">Products</a>
+                <a href="#contact" role="menuitem">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-	<!-- Hero Content -->
-	<div class="hero">
-		<div class="hero-content">
-			<h1 class="hero-logo">Fruitso.</h1>
-			<p class="tagline">Experience Pure Refreashment</p>
-			<div class="product-image">
-				<img src="assets/img/img.jpeg" alt="Fruitso.">
-			</div>
-		</div>
-	</div>
+    <main id="main-content">
+        <!-- Hero Content -->
+        <div class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="hero-logo">Fruitso.</h1>
+                <p class="tagline">Experience Pure Refreshment</p>
+                <div class="product-image">
+                    <img src="assets/img/img.jpeg" 
+                         width="640" 
+                         height="360" 
+                         loading="lazy" 
+                         decoding="async" 
+                         alt="Fruitso beverage product shot"
+                         srcset="assets/img/img-small.jpeg 300w,
+                                assets/img/img.jpeg 640w"
+                         sizes="(max-width: 600px) 300px, 640px">
+                </div>
+            </div>
+        </div>
 
-<!-- Product Details -->
-	<section class="product-showcase" id="products">
-		<div class="showcase-container">
-			<div class="product-details">
-				<h2 class="product-title">Chumala Vellam</h2>
-				<p class="product-description">
-					Discover our signature blend of natural ingredients, creating a refreshing experience that elevates every moment. Each sip is crafted to deliver pure satisfaction and unmatched taste.
-				</p>
-				<div class="product-features">
-					<div class="feature">
-						<i class="fas fa-leaf" id="one"></i>
-						<span>Natural Ingredients</span>
-					</div>
-					<div class="feature">
-						<i class="fas fa-heart" id="two"></i>
-						<span>Good for health</span>
-					</div>
-				</div>
-			</div>
-			<div class="product-gallery">
-				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6xas7MowJEJqtN_Ms297KTg3XmFCnUClrAQ&s" alt="product-image">
-			</div>
-		</div>
-	</section>
+        <!-- Product Details -->
+        <section class="product-showcase" id="products" aria-labelledby="product-title">
+            <div class="showcase-container">
+                <div class="product-details">
+                    <h2 class="product-title" id="product-title">Chumala Vellam</h2>
+                    <p class="product-description">
+                        Discover our signature blend of natural ingredients, creating a refreshing experience that elevates every moment. Each sip is crafted to deliver pure satisfaction and unmatched taste.
+                    </p>
+                    <div class="product-features" role="list">
+                        <div class="feature" role="listitem">
+                            <i class="fas fa-leaf" id="natural-icon" aria-hidden="true"></i>
+                            <span aria-labelledby="natural-icon">Natural Ingredients</span>
+                        </div>
+                        <div class="feature" role="listitem">
+                            <i class="fas fa-heart" id="health-icon" aria-hidden="true"></i>
+                            <span aria-labelledby="health-icon">Good for health</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-gallery">
+                    <img src="assets/img/images.jpeg" 
+                         width="640" 
+                         height="360" 
+                         loading="lazy" 
+                         decoding="async" 
+                         alt="Detailed view of Chumala Vellam product"
+                         srcset="assets/img/images-small.jpeg 300w,
+                                assets/img/images.jpeg 640w"
+                         sizes="(max-width: 600px) 300px, 640px">
+                </div>
+            </div>
+        </section>
 
-	<!-- Form section -->
-	<section class="order-section" id="contact">
-		<div class="order-container">
-			<h2 class="order-title">Place Order</h2>
-<form id="orderForm" novalidate>
-    <div class="input-group">
-        <label for="shopName">Shop Name</label>
-        <input type="text" name="shopName" id="shopName" required>
-        <div class="error-message"></div>
-    </div>
-    
-    <div class="input-group">
-        <label for="gstin">GST Number</label>
-        <input type="text" name="gstin" id="gstin" required maxlength="15" 
-               pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$">
-        <div class="error-message"></div>
-    </div>
-    
-    <div class="input-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="tel" name="phoneNumber" id="phoneNumber" required pattern="\d{10}">
-        <div class="error-message"></div>
-    </div>
-    
-    <div class="input-group">
-        <label for="address">Delivery Address</label>
-        <textarea name="address" id="address" required rows="3"></textarea>
-        <div class="error-message"></div>
-    </div>
-    
-    <div class="quantity-control">
-        <button type="button" class="quantity-btn minus" aria-label="Decrease quantity">
-            <i class="fas fa-minus"></i>
-        </button>
-        <span class="quantity" aria-live="polite">1</span>
-        <button type="button" class="quantity-btn plus" aria-label="Increase quantity">
-            <i class="fas fa-plus"></i>
-        </button>
-    </div>
-    
-    <button type="submit" class="order-button">
-        Place Order
-        <div class="btn-background"></div>
-    </button>
-</form>
-		</div>
-	</section>
+        <!-- Form section -->
+        <section class="order-section" id="contact" aria-labelledby="order-title">
+            <div class="order-container">
+                <h2 class="order-title" id="order-title">Place Order</h2>
+                <form id="orderForm" novalidate aria-label="Order form">
+                    <div class="input-group">
+                        <label for="shopName">Shop Name</label>
+                        <input type="text" 
+                               name="shopName" 
+                               id="shopName" 
+                               required 
+                               aria-required="true"
+                               aria-describedby="shopName-error">
+                        <div id="shopName-error" class="error-message" role="alert"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="gstin">GST Number</label>
+                        <input type="text" 
+                               name="gstin" 
+                               id="gstin" 
+                               required 
+                               maxlength="15" 
+                               pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$"
+                               aria-required="true"
+                               aria-describedby="gstin-error">
+                        <div id="gstin-error" class="error-message" role="alert"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" 
+                               name="phoneNumber" 
+                               id="phoneNumber" 
+                               required 
+                               pattern="\d{10}"
+                               aria-required="true"
+                               aria-describedby="phone-error">
+                        <div id="phone-error" class="error-message" role="alert"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea name="address" 
+                                  id="address" 
+                                  required 
+                                  rows="3"
+                                  aria-required="true"
+                                  aria-describedby="address-error"></textarea>
+                        <div id="address-error" class="error-message" role="alert"></div>
+                    </div>
+                    
+                    <div class="quantity-control" role="group" aria-label="Quantity selector">
+                        <button type="button" 
+                                class="quantity-btn minus" 
+                                aria-label="Decrease quantity">
+                            <i class="fas fa-minus" aria-hidden="true"></i>
+                        </button>
+                        <span class="quantity" 
+                              aria-live="polite" 
+                              role="status">1</span>
+                        <button type="button" 
+                                class="quantity-btn plus" 
+                                aria-label="Increase quantity">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    
+                    <button type="submit" class="order-button">
+                        Place Order
+                        <div class="btn-background" aria-hidden="true"></div>
+                    </button>
+                </form>
+            </div>
+        </section>
 
-	<div class="success-message">
-		<i class="fas fa-check-circle"></i>
-		<span>Order placed successfully</span>
-	</div>
+        <div class="success-message" role="alert" aria-hidden="true">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span>Order placed successfully</span>
+        </div>
+    </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-container">
-        	<div class="copyright">
-        		<p>&copy; 2024 <span>Fruitso</span>. All rights reserved.</p>
-        	</div>
-		</div>
-	</footer>
+            <div class="copyright">
+                <p>&copy; 2024 <span>Fruitso</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-   emailjs.init('H7f56Q3jqgH7Mm3fJ');
-</script>
-	<script src="js/app.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script>
+        window.addEventListener('load', function() {
+            emailjs.init('H7f56Q3jqgH7Mm3fJ');
+        });
+        </script>
+    </script>
+    <script src="js/app.min.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

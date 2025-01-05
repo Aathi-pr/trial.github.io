@@ -5,7 +5,7 @@
     --primary-color: #fef200;
     --secondary: #3ba24f;
     --primary-gradient: linear-gradient(45deg, #fef200 0%, #3ba24f 100%);
-    --secondary-color: #0a0a0a;
+    --secondary-color: #000000;
     --text-light: #cccccc;
     --error: #ff4d4d;
     --success: #4caf50;
@@ -97,6 +97,7 @@ body {
     position: relative;
     overflow: hidden;
     padding: 2rem;
+    text-decoration: none;
 
 }
 
@@ -114,6 +115,7 @@ body {
 .hero-content {
     text-align: center;
     position: relative;
+    z-index: 2;
     max-width: 800px;
     width: 100%;
 }
@@ -121,6 +123,7 @@ body {
 .hero-logo {
     font-family: 'unbounded', monospace;
     font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-top: 4rem;
     margin-bottom: clamp(1rem, 3vw, 2rem);
     background: var(--primary-gradient);
     -webkit-background-clip: text;
@@ -136,9 +139,15 @@ body {
     opacity: 0;
 }
 
+.product-image {
+    position: relative;
+    padding: 1rem;
+}
+
 .product-image img {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
+    aspect-ratio: auto;
     filter: drop-shadow(0 0 30px rgba(246, 211, 101, 0.3));
     transition: transform 0.3s ease;
     border-radius: 5%;
@@ -215,6 +224,7 @@ body {
 .product-gallery img {
     width: 100%;
     height: auto;
+    aspect-ratio: auto;
     border-radius: 15px;
     transition: transform 0.3s ease;
     cursor: pointer;
