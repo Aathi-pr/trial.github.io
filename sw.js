@@ -1,5 +1,5 @@
-const CACHE_NAME = 'fruitso-v1';
-const urlsToCache = [
+const PWA_CACHE = 'fruitso-v1';
+const PWA_URLS = [
   '/',
   '/index.html',
   '/css/style.css',
@@ -15,40 +15,30 @@ const urlsToCache = [
   '/manifest.json'
 ];
 
-self.addEventListener('install', event => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+    caches
+      .open(PWA_CACHE)
+      .then((cache) => {
+        console.log("Caching resources...");
+        return cache.addAll(PWA_URLS);
       })
+      .catch((error) => {
+        console.error("Failed to cache resources:", error);
+      }),
   );
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-
-        return fetch(event.request)
-          .then(response => {
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            const responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          });
+    caches
+      .match(event.request)
+      .then((response) => {
+        return response || fetch(event.request);
       })
+      .catch((error) => {
+        console.error("Fetch failed:", error);
+      }),
   );
 });
 
