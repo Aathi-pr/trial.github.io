@@ -32,6 +32,17 @@ if ('serviceWorker' in navigator) {
 <body>
     <a href="#main-content" class="skip-link" style="display: none;">Skip to main content</a>
 
+    <div class="pulse-container" id="preloader">
+        <div class="wave" style="animation-delay: 0s;"></div>
+        <div class="wave" style="animation-delay: -2s;"></div>
+        <div class="wave" style="animation-delay: -4s;"></div>
+        <div class="wave" style="animation-delay: -6s;"></div>
+
+        <div class="loader-logo">
+            <div class="Fruitso">Frutiso.</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav-container" role="navigation" aria-label="Main navigation">
         <div class="nav-content">
@@ -183,7 +194,6 @@ if ('serviceWorker' in navigator) {
             <i class="fas fa-check-circle" aria-hidden="true"></i>
             <span>Order placed successfully</span>
         </div>
-    </main>
 
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
@@ -192,7 +202,7 @@ if ('serviceWorker' in navigator) {
             </div>
         </div>
     </footer>
-
+    </main>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
     <script>
@@ -200,7 +210,6 @@ if ('serviceWorker' in navigator) {
             emailjs.init('H7f56Q3jqgH7Mm3fJ');
         });
         </script>
-    </script>
     <script src="js/app.min.js" defer></script>
 </body>
 </html>
