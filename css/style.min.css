@@ -18,7 +18,7 @@
 }
 
 #main-content {
-    display: block; /* Changed from none to block */
+    display: block;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -97,11 +97,6 @@ body {
 
 .nav-links a:hover {
     color: var(--primary-color);
-}
-
-.product-showcase.animate, .order-container.animate {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .hero {
@@ -284,6 +279,11 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     opacity: 1;
     transform: none;
+}
+
+.product-showcase.animate, .order-container.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .order-title {
